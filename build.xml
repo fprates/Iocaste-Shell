@@ -1,0 +1,32 @@
+<project name="iocaste-shell" default="compile">
+    <property name="targetdir-pages" value="${basedir}/bin/pages"/>
+    <property name="targetdir-web" value="${basedir}/bin/WEB-INF"/>
+    <property name="targetdir-classes" value="${basedir}/bin-classes"/>
+    <property name="targetdir-common" value="${basedir}/bin-common"/>
+	<property name="builddir" value="${basedir}/build"/>
+
+	<target name="clean">
+        <delete dir="${builddir}"/>
+	</target>
+		
+    <target name="compile" depends="clean">
+        <copy todir="${builddir}/WEB-INF">
+            <fileset dir="${targetdir-web}"/>
+        </copy>
+    	
+        <copy todir="${builddir}/WEB-INF/classes">
+        	<fileset dir="${targetdir-classes}"/>
+    	</copy>
+    	
+    	<copy todir="${builddir}">
+    		<fileset dir="${targetdir-pages}"/>
+    	</copy>
+        
+        <jar basedir="${targetdir-common}" destfile="${basedir}/${ant.project.name}-common.jar"/>
+    	
+    	<copy todir="${builddir}/WEB-INF/lib/" file="../iocaste/iocaste-common.jar"/>
+    	
+    	<war basedir="${builddir}" destfile="${basedir}/${ant.project.name}.war"/>
+        <delete dir="${builddir}"/>
+    </target>
+</project>
