@@ -22,10 +22,14 @@
     		<fileset dir="${targetdir-pages}"/>
     	</copy>
         
-        <jar basedir="${targetdir-common}" destfile="${builddir}/WEB-INF/lib/${ant.project.name}-common.jar"/>
+        <jar basedir="${targetdir-common}" destfile="${basedir}/lib/${ant.project.name}-common.jar"/>
     	
-    	<copy todir="${builddir}/WEB-INF/lib/" file="../iocaste/lib/iocaste-common.jar"/>
+    	<copy todir="${basedir}/lib/" file="../iocaste/lib/iocaste-common.jar"/>
     	
+    	<copy todir="${builddir}/WEB-INF/lib">
+    		<fileset file="${basedir}/lib/*.jar"/>
+    	</copy>
+    		
     	<war basedir="${builddir}" destfile="${basedir}/${ant.project.name}.war"/>
         <delete dir="${builddir}"/>
     </target>
