@@ -1,4 +1,4 @@
-package org.iocaste.shell;
+package org.iocaste.shell.servlet;
 
 import org.iocaste.protocol.ServerServlet;
 
