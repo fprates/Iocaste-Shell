@@ -26,7 +26,8 @@ public abstract class ClientServlet extends IocasteServlet {
      * @throws Exception
      */
     protected final void execute(String appname) throws Exception {
-        redirect(shell.getAppUrl(appname));
+        setValue("app_url", shell.getAppUrl(appname));
+        redirect("shell.jsp");
     }
     
     protected final void message(int type, String tag) {

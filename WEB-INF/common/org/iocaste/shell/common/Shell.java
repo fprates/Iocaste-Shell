@@ -8,7 +8,7 @@ import org.iocaste.protocol.Message;
 public class Shell extends AbstractServiceInterface {
     
     public Shell(IocasteServlet servlet) throws IOException {
-        initService(servlet, "http://localhost:8080/iocaste-shell/index.jsp");
+        initService(servlet, "http://localhost:8080/iocaste-shell/services.html");
     }
     
     /**

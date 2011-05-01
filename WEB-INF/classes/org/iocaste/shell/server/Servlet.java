@@ -1,4 +1,4 @@
-package org.iocaste.shell.servlet;
+package org.iocaste.shell.server;
 
 import org.iocaste.protocol.ServerServlet;
 
@@ -10,6 +10,8 @@ public class Servlet extends ServerServlet {
         ShellServices shellservices = new ShellServices();
         
         addFunction("get_app_url", shellservices);
+        
+        setUrl("http://localhost:8080/iocaste-shell/services.html");
     }
 
 }

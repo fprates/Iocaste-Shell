@@ -1,4 +1,4 @@
-package org.iocaste.shell.servlet;
+package org.iocaste.shell.server;
 
 import org.iocaste.protocol.AbstractFunction;
 import org.iocaste.protocol.Message;
@@ -11,7 +11,9 @@ public class ShellServices extends AbstractFunction {
      * @return url
      */
     private final String getAppUrl(String appname) {
-        return "";
+        Task task = (Task)load(Task.class, appname);
+        
+        return task.getUrl().trim();
     }
     
     @Override
