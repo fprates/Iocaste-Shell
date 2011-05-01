@@ -22,7 +22,7 @@
     		<fileset dir="${targetdir-pages}"/>
     	</copy>
         
-        <jar basedir="${targetdir-common}" destfile="${basedir}/${ant.project.name}-common.jar"/>
+        <jar basedir="${targetdir-common}" destfile="${builddir}/WEB-INF/lib/${ant.project.name}-common.jar"/>
     	
     	<copy todir="${builddir}/WEB-INF/lib/" file="../iocaste/iocaste-common.jar"/>
     	
