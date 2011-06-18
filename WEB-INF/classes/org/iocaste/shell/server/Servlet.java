@@ -8,8 +8,6 @@ public class Servlet extends ServerServlet {
     @Override
     protected void config() {
         register(new ShellServices());
-        
-        setUrl("http://localhost:8080/iocaste-shell/services.html");
     }
 
 }
