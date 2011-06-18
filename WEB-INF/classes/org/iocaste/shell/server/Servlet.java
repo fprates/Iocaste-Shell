@@ -10,6 +10,7 @@ public class Servlet extends ServerServlet {
         ShellServices shellservices = new ShellServices();
         
         addFunction("get_app_url", shellservices);
+        addFunction("get_task_entries", shellservices);
         
         setUrl("http://localhost:8080/iocaste-shell/services.html");
     }

@@ -1,5 +1,7 @@
 package org.iocaste.shell.common;
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 
 import org.iocaste.protocol.AbstractServiceInterface;
 import org.iocaste.protocol.Message;
@@ -29,5 +31,24 @@ public class Shell extends AbstractServiceInterface {
         message.add("app_name", appname);
         
         return (String)call(message);
+    }
+    
+    public List<TaskEntry> getTaskEntries()throws Exception {
+        List<?> list;
+        List<TaskEntry> entries;
+        Message message = new Message();
+        
+        message.setId("get_task_entries");
+        
+        list = (List<?>)call(message);
+        if (list == null)
+            return null;
+        
+        entries = new LinkedList<TaskEntry>();
+        
+        for (Object entry : list)
+            entries.add((TaskEntry)entry);
+        
+        return entries;
     }
 }

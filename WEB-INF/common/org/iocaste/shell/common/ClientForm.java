@@ -29,6 +29,14 @@ public abstract class ClientForm extends IocasteModule {
     
     /**
      * 
+     * @return
+     */
+    protected final Shell getShellInstance() {
+        return shell;
+    }
+    
+    /**
+     * 
      * @param type
      * @param tag
      * @return
