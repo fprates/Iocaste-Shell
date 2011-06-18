@@ -16,8 +16,8 @@ public class ShellServices extends AbstractFunction {
         entries.add(new TaskEntry("teste1.xhtml", "Teste1"));
         entries.add(new TaskEntry("teste2.xhtml", "Teste2"));
         
-        export("get_app_url");
-        export("get_task_entries");
+        export("get_app_url", "getAppUrl");
+        export("get_task_entries", "getTaskEntries");
     }
     
     /**
@@ -25,27 +25,14 @@ public class ShellServices extends AbstractFunction {
      * @param appname nome da aplicação
      * @return url
      */
-    private final String getAppUrl(String appname) {
-        Task task = (Task)load(Task.class, appname);
+    public final String getAppUrl(Message message) {
+        Task task = (Task)load(Task.class, message.getString("app_name"));
         
         return task.getUrl().trim();
     }
     
-    private final List<TaskEntry> getTaskEntries() {
+    public final List<TaskEntry> getTaskEntries(Message message) {
         return entries;
-    }
-    
-    @Override
-    public Object run(Message message) {
-        String id = message.getId();
-        
-        if (id.equals("get_app_url"))
-            return getAppUrl(message.getString("app_name"));
-        
-        if (id.equals("get_task_entries"))
-            return getTaskEntries();
-        
-        return null;
     }
 
 }
