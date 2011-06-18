@@ -7,10 +7,7 @@ public class Servlet extends ServerServlet {
 
     @Override
     protected void config() {
-        ShellServices shellservices = new ShellServices();
-        
-        addFunction("get_app_url", shellservices);
-        addFunction("get_task_entries", shellservices);
+        register(new ShellServices());
         
         setUrl("http://localhost:8080/iocaste-shell/services.html");
     }

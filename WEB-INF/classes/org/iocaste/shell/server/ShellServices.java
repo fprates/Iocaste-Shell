@@ -15,6 +15,9 @@ public class ShellServices extends AbstractFunction {
         
         entries.add(new TaskEntry("teste1.xhtml", "Teste1"));
         entries.add(new TaskEntry("teste2.xhtml", "Teste2"));
+        
+        export("get_app_url");
+        export("get_task_entries");
     }
     
     /**
