@@ -2,13 +2,18 @@ package org.iocaste.shell.common;
 import java.io.IOException;
 
 import org.iocaste.protocol.AbstractServiceInterface;
-import org.iocaste.protocol.IocasteServlet;
 import org.iocaste.protocol.Message;
+import org.iocaste.protocol.Module;
 
 public class Shell extends AbstractServiceInterface {
     
-    public Shell(IocasteServlet servlet) throws IOException {
-        initService(servlet, "http://localhost:8080/iocaste-shell/services.html");
+    /**
+     * 
+     * @param module
+     * @throws IOException
+     */
+    public Shell(Module module) throws Exception {
+        initService(module, "http://localhost:8080/iocaste-shell/services.html");
     }
     
     /**
