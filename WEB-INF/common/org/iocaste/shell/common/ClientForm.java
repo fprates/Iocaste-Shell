@@ -1,5 +1,6 @@
 package org.iocaste.shell.common;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 
@@ -41,7 +42,9 @@ public abstract class ClientForm extends IocasteModule {
      * @param tag
      * @return
      */
-    protected final String message(int type, String tag) {
-        return "error";
+    protected final void message(int type, String tag) {
+        FacesContext ctx = FacesContext.getCurrentInstance();
+        
+        ctx.addMessage(null, new FacesMessage(tag));
     }
 }

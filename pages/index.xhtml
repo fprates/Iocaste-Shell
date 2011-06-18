@@ -11,11 +11,11 @@
       <h:form>
             <h:panelGrid columns="2">
                 <h:outputText value="Usuário"/>
-                <h:inputText value="#{loginForm.user}"/>
+                <h:inputText value="#{login_form.user}"/>
                 <h:outputText value="Senha"/>
-                <h:inputSecret value="#{loginForm.secret}"/>
+                <h:inputSecret value="#{login_form.secret}"/>
             </h:panelGrid>
-            <h:commandButton value="Autenticar" action="#{loginForm.autenticate}"/>
+            <h:commandButton value="Autenticar" action="#{login_form.autenticate}"/>
         </h:form>
     </ui:define>
 </ui:composition>

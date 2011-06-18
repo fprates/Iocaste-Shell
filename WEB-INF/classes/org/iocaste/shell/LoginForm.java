@@ -6,7 +6,7 @@ import javax.faces.bean.RequestScoped;
 import org.iocaste.protocol.Iocaste;
 import org.iocaste.shell.common.ClientForm;
 
-@ManagedBean(name="loginForm")
+@ManagedBean(name="login_form")
 @RequestScoped
 public class LoginForm extends ClientForm {
     private static final long serialVersionUID = 794315365771230508L;
@@ -74,6 +74,8 @@ public class LoginForm extends ClientForm {
         if (iocaste.login(user, secret))
             return getAppAddress("task_selector");
         else
-            return message(ERROR, "invalid.login");
+            message(ERROR, "invalid.login");
+        
+        return null;
     }
 }
