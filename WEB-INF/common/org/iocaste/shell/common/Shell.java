@@ -15,7 +15,7 @@ public class Shell extends AbstractServiceInterface {
      * @throws IOException
      */
     public Shell(Module module) throws Exception {
-        initService(module, "http://localhost:8080/iocaste-shell/services.html");
+        initService(module, "/iocaste-shell/services.html");
     }
     
     /**
