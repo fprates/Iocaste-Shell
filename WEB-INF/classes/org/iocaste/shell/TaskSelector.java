@@ -14,10 +14,6 @@ import org.iocaste.shell.common.TaskEntry;
 public class TaskSelector extends ClientForm {
     private static final long serialVersionUID = 5243240216263158706L;
 
-    public TaskSelector() throws Exception {
-        super();
-    }
-
     public final Collection<TaskEntry> getItems() throws Exception {
         Shell shell = getShellInstance();
         

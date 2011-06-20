@@ -13,7 +13,7 @@ public abstract class ClientForm extends IocasteModule {
     protected static final int ERROR = 2;
     private Shell shell;
     
-    public ClientForm() throws Exception {
+    public ClientForm() {
         setRequest((HttpServletRequest)FacesContext.
                 getCurrentInstance().getExternalContext().getRequest());
         shell = new Shell(this);

@@ -13,10 +13,6 @@ public class LoginForm extends ClientForm {
     private String user;
     private String secret;
     
-    public LoginForm() throws Exception {
-        super();
-    }
-    
     /*
      * 
      * Getters
